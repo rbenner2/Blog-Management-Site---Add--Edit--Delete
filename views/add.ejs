@@ -1,0 +1,81 @@
+<%
+
+  var description = '';
+  var blogTitle = '';
+
+  var blogTitleError = '';
+  var descriptionError = '';
+
+  if(typeof(er) != 'undefined')
+  {
+    for(var error of er)
+    { 
+      switch(error.param){
+        case 'blogTitle':        blogTitle = error.value;
+                                  blogTitleError = error.msg;
+                                  break;
+        case 'description':      description = error.value;
+                                  descriptionError = error.msg;
+                                  break;
+      }
+    }
+  }
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/jpg" href="../images/art.png"/>
+  <script src="https://cdn.tiny.cloud/1/cbf7sjpbyjkb4ore9gmuqckfwjbw9qt05gsx4k8ezr5y394e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Art Flux - Add</title>
+  <script>
+    tinymce.init({
+      selector: '#description',
+      height: 500,
+      menubar: false
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Art Flux.</h1>
+  <nav id="mainNav">
+    <a href="/add">Add</a>
+    <a href="/allposts">All Posts</a>
+  </nav>
+</header>
+  <main>
+    <h1>Build  a Blog Post</h1>
+    <form action="process" method="POST" enctype="multipart/form-data">
+      <div class="wrapper">
+        <label for="image">Image Upload</label>
+        <input type="file" id="image" name="image">
+      </div>
+      <div class="wrapper">
+        <label for="blogTitle">Blog Post Title</label>
+        <input type="text" id="blogTitle" name="blogTitle" 
+        value="<%= blogTitle %>">
+
+      </div>
+      <div class="wrapper">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description">
+        <p class="error"><%= blogTitleError %></p>
+        <p class="error"><%= descriptionError %></p>
+      </div>
+      <div class="submission">
+        <input type="submit" value="Generate Blog Post">
+      </div>
+    </form>
+
+  </main>
+  
+  <footer>
+    &copy; Regan Benner | 2021 | rbenner5051@conestogac.on.ca  
+</footer>
+
+</body>
+</html>

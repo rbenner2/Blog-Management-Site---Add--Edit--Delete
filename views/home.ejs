@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/jpg" href="../images/art.png"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Art Flux</title>
+</head>
+<body>
+  <header>
+    <h1>Art Flux.</h1>
+  <nav id="mainNav">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <%
+      for(var post of posts){
+        %>
+          <a href="<%= post._id %>"><%= post.blogTitle %></a>
+        <%
+      }
+    %>
+  </nav>
+</header>
+  <main>
+            <h1>About Art Flux</h1>
+            <h2>Mission Statement</h2>
+            <p>
+                Art Flux is a place to keep you up to date with the latest in the art world. 
+                We feature exhibitions, artists, artist videos, and upcoming exhibition schedules.
+                Use our feedback page to submit any recommendations. You can also visit us in person
+                at our main gallery location in London, Ontario. We have a series of rotating exhibitions
+                throughout the uear. Email us to set up special appointments
+                and tours.
+            </p>
+            <h2>About Us</h2>
+            <p>
+                Lorem ipsum dolor sit amet, 
+                consectetur adipiscing elit. Mauris mattis mauris quis tempus tincidunt. 
+                Maecenas placerat enim vitae scelerisque consectetur. Cras elementum magna 
+                id leo viverra ultricies. Proin quis mi nunc. Duis nec sem eget ligula viverra 
+                feugiat sed et lacus. Mauris at convallis ante. Nullam vel justo scelerisque 
+                neque cursus egestas a quis est. In dolor lorem, rutrum in metus ac, viverra 
+                ultrices velit. Pellentesque dignissim purus in erat posuere, in condimentum 
+                erat placerat.
+            </p>
+  </main>
+  
+  <footer>
+    &copy; Regan Benner | 2021 | rbenner5051@conestogac.on.ca  
+</footer>
+
+</body>
+</html>

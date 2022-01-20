@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/jpg" href="../images/art.png"/>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <title>Art Flux </title>
+</head>
+<body class="post">
+  <header>
+    <h1>Art Flux.</h1>
+  <nav id="mainNav">
+    <a href="/home">Home</a>
+    <a href="/login">Login</a>
+    <%
+      for(var post of posts){
+        %>
+          <a href="<%= post._id %>"><%= post.blogTitle %></a>
+        <%
+      }
+    %>
+  </nav>
+</header>
+  <main>
+    <section>
+        <div class="postData">
+          <h1><%- blogTitle %></h1>
+
+            <img src="../uploads/<%= imageName %>" alt="<%= imageName %>">
+            <%- description %>
+
+          <div style="clear: both;"></div>
+
+        </div>
+    </section>
+  </main>
+  
+  <footer>
+    &copy; Regan Benner | 2021 | rbenner5051@conestogac.on.ca  
+</footer>
+</body>
+</html>

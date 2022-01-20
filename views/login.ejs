@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/jpg" href="../images/art.png"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Blog Post</title>
+</head>
+<body class="post">
+  <header>
+    <h1>Art Flux.</h1>
+  <nav id="mainNav">
+    <a href="/">Home</a>
+  </nav>
+</header>
+<main>
+  <section>
+    <form name="myform" method="Post" action="" >
+      <div class="wrapper">
+      <label>Username</label>
+      <input id="username"  type="text" name="username"><br/>
+
+      <label>Password</label>
+      <input id="password" type="password" name="password"><br/>
+      <br/><br/>
+
+      <div class="submission">
+        <input type="submit" value="Login">
+      </div>
+      <p id="errors">
+        <%
+          if(typeof error !== 'undefined'){
+            %>
+              <%= error %>
+            <%
+          }
+        %>
+
+      </p>
+    </div>
+    </form> 
+    </section> 
+  </main>
+<footer>
+  &copy; Regan Benner | 2021 | rbenner5051@conestogac.on.ca  
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
